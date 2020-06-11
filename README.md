@@ -1,1 +1,9 @@
-dsa-6-2-3-4
+Project requires Node.js v12+
+
+Install dependencies
+
+`npm install`
+
+Run
+
+`npm run start`

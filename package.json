@@ -1,0 +1,19 @@
+{
+  "name": "dsa",
+  "version": "1.0.0",
+  "description": "dsa labs",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build"
+  },
+  "keywords": [
+    "dsa",
+    "alg"
+  ],
+  "author": "Serhii Pylypchuk",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.9.5"
+  }
+}

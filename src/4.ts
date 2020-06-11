@@ -1,10 +1,15 @@
-const dataset = [ ...new Array(100) ].map((v, index) => ({
+interface KeyValue {
+	key: number,
+	value: number
+}
+
+const dataset = [ ...new Array<KeyValue>(100) ].map((_v, index) => ({
 	key: index,
 	value: Math.round(Math.random() * 100)
 }));
 
 
-const add = (heap, elem) => {
+const add = (heap: KeyValue[], elem: number) => {
 	const newHeap = [ ...heap, elem ];
 	let i = newHeap.length - 1;
 	let parentIndex = (i - 1) / 2;
@@ -20,7 +25,8 @@ const add = (heap, elem) => {
 
 	return newHeap;
 };
-const getMin = (heap) => {
+
+const getMin = (heap: KeyValue[]) => {
 	let list = [ ...heap ];
 	let result = list[0];
 	list[0] = list[list.length - 1];
@@ -28,7 +34,7 @@ const getMin = (heap) => {
 
 	return [ result, list ];
 };
-const heapify = (heap, i) => {
+const heapify = (heap: KeyValue[], i: number) => {
 	let leftChild;
 	let rightChild;
 	let largestChild;
@@ -56,12 +62,14 @@ const heapify = (heap, i) => {
 }
 
 
-const buildHeap = (dataset) => {
+function buildHeap(dataset: KeyValue[]) {
 	const heap = dataset;
 	for (let i = heap.length / 2; i >= 0; i--){
 		heapify(heap, i);
 	}
 	return heap;
-};
+}
 
-console.log(JSON.stringify(buildHeap(dataset)));
+export function runTask4() {
+	console.log('Heap \n', buildHeap(dataset), '\n');
+}
