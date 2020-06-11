@@ -61,6 +61,6 @@ function getHuffmanTree(str: string) {
 
 export function runTask1() {
     let str = '122333';
-    let longStr = crypto.randomBytes(100).toString('hex');
+    let longStr = crypto.randomBytes(100).toString('hex').substr(0, 100);
     console.log(util.inspect(getHuffmanTree(longStr), false, null, true /* enable colors */));
 }
