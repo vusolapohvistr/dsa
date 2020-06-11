@@ -38,6 +38,7 @@ function getHuffmanTree(str: string) {
             symbol: key,
         },
     }));
+    
     roots.sort((a, b) => b.sum - a.sum); // 3, 4, 1 -> 4, 3, 1 : desc order
     while (roots.length != 1) {
         const left = roots.pop();
